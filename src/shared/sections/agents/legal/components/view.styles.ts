@@ -1,0 +1,240 @@
+import { SxProps, Theme } from '@mui/material';
+
+export const styles = {
+  root: { display: 'flex', width: '100%', minHeight: '100vh' } as SxProps<Theme>,
+
+  outer: { width: '100%', p: { xs: 1, sm: 1.5, md: 1.5 } } as SxProps<Theme>,
+
+  frame: {
+    width: '100%',
+    height: 'calc(100vh - 32px)',
+    borderRadius: { xs: '16px', md: '24px' },
+    border: '2px solid transparent',
+    background: `
+              linear-gradient(#1a1a2e, #0d2d45) padding-box,
+              linear-gradient(45deg, #BE30FF, #5D31F8, #00A3FF) border-box
+            `,
+    backgroundColor: 'rgb(13, 45, 69)',
+    display: 'flex',
+    position: 'relative',
+    mx: 'auto',
+    overflow: 'hidden',
+  } as SxProps<Theme>,
+
+  frameOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgb(38, 26, 93)',
+    borderRadius: { xs: '16px', md: '24px' },
+    zIndex: 0,
+  } as SxProps<Theme>,
+
+  contentRow: {
+    display: 'flex',
+    position: 'relative',
+    zIndex: 1,
+    flex: 1,
+    height: '100%',
+    overflow: 'hidden',
+  } as SxProps<Theme>,
+
+  sidebar: {
+    width: '260px',
+    height: '100%',
+    flexShrink: 0,
+    borderRadius: { xs: '16px', md: '24px' },
+    backgroundColor: 'rgb(55, 32, 142)',
+    position: 'relative',
+    zIndex: 2,
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '8px 20px 24px 20px',
+    gap: '16px',
+    overflow: 'hidden',
+  } as SxProps<Theme>,
+
+  sidebarMenu: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+  } as SxProps<Theme>,
+
+  main: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%',
+    position: 'relative',
+    padding: '24px',
+    boxShadow: 'none',
+    borderRadius: { xs: '16px', md: '24px' },
+    zIndex: 1,
+    overflow: 'hidden',
+  } as SxProps<Theme>,
+
+  scrollArea: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    '&::-webkit-scrollbar': { width: '0px', display: 'none' },
+    '&::-webkit-scrollbar-track': { display: 'none' },
+    '&::-webkit-scrollbar-thumb': { display: 'none' },
+    scrollbarWidth: 'none',
+    msOverflowStyle: 'none',
+  } as SxProps<Theme>,
+
+  menuButton: (theme: Theme, isActive: boolean): SxProps<Theme> => ({
+    width: '100%',
+    py: 1.5,
+    px: 2,
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    borderRadius: '8px',
+    background: isActive ? 'rgb(49, 30, 125)' : 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    color: isActive ? '#5d2eff' : '#EDEDED',
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: isActive ? 700 : 600,
+    lineHeight: 'normal',
+    transition: 'all 0.2s ease',
+    textAlign: 'left',
+    minHeight: '48px',
+    '&:hover': {
+      background: isActive ? 'rgb(49, 30, 125)' : 'rgba(49, 30, 125, 0.5)',
+      color: isActive ? '#5d2eff' : '#5d2eff',
+    },
+  }),
+
+  menuButtonLabel: (theme: Theme, isActive: boolean): SxProps<Theme> => ({
+    flex: '1 1 auto',
+    textAlign: 'left',
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: isActive ? 700 : 500,
+    lineHeight: 'normal',
+    color: 'inherit',
+  }),
+  newChatButton: {
+    display: 'flex',
+    width: '100%',
+    height: '42px',
+    padding: '8px 12px',
+    alignItems: 'center',
+    gap: '12px',
+    flexShrink: 0,
+    borderRadius: '8px',
+    background: '#1F1745',
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#2A1F5A',
+    },
+  } as SxProps<Theme>,
+
+  newChatText: {
+    color: '#5D2EFF',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: 600,
+    lineHeight: '121.331%',
+    whiteSpace: 'nowrap',
+  } as SxProps<Theme>,
+
+  searchContainer: {
+    display: 'flex',
+    width: '100%',
+    height: '42px',
+    padding: '8px 12px',
+    alignItems: 'center',
+    gap: '12px',
+    flexShrink: 0,
+    borderRadius: '8px',
+    background: '#1F1745',
+    border: 'none',
+    cursor: 'text',
+    transition: 'all 0.2s ease',
+    '&:hover': {
+      background: '#2A1F5A',
+    },
+  } as SxProps<Theme>,
+
+  searchInput: {
+    flex: 1,
+    background: 'transparent',
+    border: 'none',
+    outline: 'none',
+    color: '#5D2EFF',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: 600,
+    lineHeight: '121.331%',
+    '&::placeholder': {
+      color: '#5D2EFF',
+      opacity: 0.7,
+    },
+  } as SxProps<Theme>,
+
+  historyContainer: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '4px',
+    },
+    '&::-webkit-scrollbar-track': {
+      background: 'transparent',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: 'rgba(93, 46, 255, 0.3)',
+      borderRadius: '2px',
+    },
+  } as SxProps<Theme>,
+
+  historyItem: {
+    display: 'flex',
+    width: '100%',
+    padding: '12px 8px',
+    alignItems: 'center',
+    borderRadius: '8px',
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    textAlign: 'left',
+    mb: 1,
+    '&:hover': {
+      backgroundColor: 'rgba(93, 46, 255, 0.1)',
+    },
+    '&:last-child': {
+      mb: 0,
+    },
+  } as SxProps<Theme>,
+
+  historyItemText: {
+    color: '#EDEDED',
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '15px',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    lineHeight: 'normal',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    width: '100%',
+  } as SxProps<Theme>,
+};
